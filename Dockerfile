@@ -4,6 +4,7 @@ FROM pi-agent:latest
 RUN curl -fsSL https://openclaw.ai/install.sh | bash
 
 COPY openclaw.json /root/.openclaw/openclaw.json
+COPY entry.sh /entry.sh
 
 WORKDIR /root
 
@@ -12,3 +13,5 @@ EXPOSE 18789
 
 ENV OLLAMA_CONTEXT_LENGTH=256000
 ENV OPENCLAW_GATEWAY_PASSWORD=hello
+
+ENTRYPOINT ["/bin/bash", "/entry.sh"]

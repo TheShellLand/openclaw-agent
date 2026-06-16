@@ -1,68 +1,52 @@
 {
-   "agents":{
-      "defaults":{
-         "model":{
-            "primary":"ollama_docker",
-            "fallbacks":[
-               "ollama_gpu",
-               "ollama_mac"
-            ]
-         },
-         "models":{
-            "ollama_docker":{
-               "alias":"Docker"
+    "models": {
+        "providers": {
+            "ollama_mac": {
+                "api": "ollama",
+                "apiKey": "ollama",
+                "auth": "api-key",
+                "baseUrl": "http://host.docker.internal:11434",
+                "contextTokens": 246000,
+                "contextWindow": 246000,
+                "maxTokens": 246000,
+                "models": [
+                    {
+                        "api": "ollama",
+                        "contextTokens": 256000,
+                        "contextWindow": 256000,
+                        "id": "gemma4:12b",
+                        "maxTokens": 256000,
+                        "name": "gemma4:12b"
+                    }
+                ]
             },
-            "ollama_gpu":{
-               "alias":"GPU"
-            },
-            "ollama_mac":{
-               "alias":"Mac"
+            "ollama": {
+                "api": "ollama",
+                "apiKey": "ollama",
+                "auth": "api-key",
+                "baseUrl": "http://ollama:11434",
+                "contextTokens": 246000,
+                "contextWindow": 246000,
+                "maxTokens": 246000,
+                "models": [
+                    {
+                        "api": "ollama",
+                        "contextTokens": 256000,
+                        "contextWindow": 256000,
+                        "id": "gemma4:12b",
+                        "maxTokens": 256000,
+                        "name": "gemma4:12b"
+                    }
+                ]
             }
-         }
-      }
-   },
-   "providers":{
-      "ollama_mac":{
-         "baseUrl":"http://host.docker.internal:11434/v1",
-         "api":"openai-completions",
-         "apiKey":"ollama",
-         "models":[
-            {
-               "id":"gemma4:12b",
-               "params":{
-                  "num_ctx":256000,
-                  "contextWindow":256000
-               }
+        }
+    },
+    "agents": {
+        "defaults": {
+            "model": {
+                "primary": "ollama/gemma4:12b",
+                "fallbacks": ["ollama_mac/gemma4:12b"]
             }
-         ]
-      },
-      "ollama_gpu":{
-         "baseUrl":"http://192.168.111.175:11434/v1",
-         "api":"openai-completions",
-         "apiKey":"ollama",
-         "models":[
-            {
-               "id":"gemma4:12b",
-               "params":{
-                  "num_ctx":256000,
-                  "contextWindow":256000
-               }
-            }
-         ]
-      },
-      "ollama_docker":{
-         "baseUrl":"http://ollama:11434/v1",
-         "api":"openai-completions",
-         "apiKey":"ollama",
-         "models":[
-            {
-               "id":"gemma4:12b",
-               "params":{
-                  "num_ctx":256000,
-                  "contextWindow":256000
-               }
-            }
-         ]
-      }
-   }
+        }
+    }
 }

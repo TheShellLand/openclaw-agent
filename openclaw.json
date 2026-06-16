@@ -1,52 +1,78 @@
 {
-    "models": {
-        "providers": {
-            "ollama_mac": {
-                "api": "ollama",
-                "apiKey": "ollama",
-                "auth": "api-key",
-                "baseUrl": "http://host.docker.internal:11434",
-                "contextTokens": 246000,
-                "contextWindow": 246000,
-                "maxTokens": 246000,
-                "models": [
-                    {
-                        "api": "ollama",
-                        "contextTokens": 256000,
-                        "contextWindow": 256000,
-                        "id": "gemma4:12b",
-                        "maxTokens": 256000,
-                        "name": "gemma4:12b"
-                    }
-                ]
-            },
-            "ollama": {
-                "api": "ollama",
-                "apiKey": "ollama",
-                "auth": "api-key",
-                "baseUrl": "http://ollama:11434",
-                "contextTokens": 246000,
-                "contextWindow": 246000,
-                "maxTokens": 246000,
-                "models": [
-                    {
-                        "api": "ollama",
-                        "contextTokens": 256000,
-                        "contextWindow": 256000,
-                        "id": "gemma4:12b",
-                        "maxTokens": 256000,
-                        "name": "gemma4:12b"
-                    }
-                ]
-            }
-        }
-    },
-    "agents": {
-        "defaults": {
-            "model": {
-                "primary": "ollama/gemma4:12b",
-                "fallbacks": ["ollama_mac/gemma4:12b"]
-            }
-        }
+  "models": {
+    "providers": {
+      "ollama_mac": {
+        "api": "ollama",
+        "apiKey": "ollama",
+        "auth": "api-key",
+        "baseUrl": "http://host.docker.internal:11434",
+        "contextTokens": 246000,
+        "contextWindow": 246000,
+        "maxTokens": 246000,
+        "models": [
+          {
+            "api": "ollama",
+            "contextTokens": 256000,
+            "contextWindow": 256000,
+            "id": "gemma4:12b",
+            "maxTokens": 256000,
+            "name": "gemma4:12b"
+          }
+        ]
+      },
+      "ollama_docker": {
+        "api": "ollama",
+        "apiKey": "ollama",
+        "auth": "api-key",
+        "baseUrl": "http://ollama:11434",
+        "contextTokens": 246000,
+        "contextWindow": 246000,
+        "maxTokens": 246000,
+        "models": [
+          {
+            "api": "ollama",
+            "contextTokens": 256000,
+            "contextWindow": 256000,
+            "id": "gemma4:12b",
+            "maxTokens": 256000,
+            "name": "gemma4:12b"
+          }
+        ]
+      },
+      "ollama_gpu": {
+        "api": "ollama",
+        "apiKey": "ollama",
+        "auth": "api-key",
+        "baseUrl": "http://192.168.111.175:11434",
+        "contextTokens": 246000,
+        "contextWindow": 246000,
+        "maxTokens": 246000,
+        "models": [
+          {
+            "api": "ollama",
+            "contextTokens": 256000,
+            "contextWindow": 256000,
+            "id": "gemma4:12b",
+            "maxTokens": 256000,
+            "name": "gemma4:12b"
+          }
+        ]
+      }
     }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/gemma4:12b",
+        "fallbacks": [
+          "ollama_mac/gemma4:12b"
+        ]
+      }
+    }
+  },
+  "gateway": {
+    "controlUi": {
+      "allowInsecureAuth": true
+    }
+  }
 }

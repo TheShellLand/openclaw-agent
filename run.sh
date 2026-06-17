@@ -1,5 +1,5 @@
 #!/bin/bash 
-# run agent in docker
+# run agent
 
 image="openclaw-agent"
 

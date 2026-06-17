@@ -88,7 +88,11 @@
     }
   },
   "commands": {
-    "bash": true
+    "bash": true,
+    "config": true,
+    "debug": true,
+    "mcp": true,
+    "plugins": true
   },
   "tools": {
     "elevated": {
@@ -104,6 +108,13 @@
     "entries": {
       "workboard": {
         "enabled": true
+      },
+      "memory-core": {
+        "config": {
+          "dreaming": {
+            "enabled": true
+          }
+        }
       }
     },
     "enabled": true
@@ -113,7 +124,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.6.8",
-    "lastTouchedAt": "2026-06-17T11:11:42.766Z"
+    "lastTouchedAt": "2026-06-17T13:26:39.200Z"
   },
   "browser": {
     "enabled": true

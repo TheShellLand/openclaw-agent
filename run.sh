@@ -28,12 +28,11 @@ docker run -it -d \
 
 #  -v "$(pwd)/openclaw.json":/root/.openclaw/openclaw.json \
 
-set +x
 
 ifconfig | grep "inet " | grep -v 127
-echo
 
+set +x
+echo
 echo "https://GET_YOUR_IP_ADDRESS:18789/"
 echo
-
 echo "password is 'hello'"

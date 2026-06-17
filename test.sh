@@ -6,7 +6,7 @@ image="openclaw-agent"
 set -e
 
 docker network create agents >/dev/null 2>&1 || :
-docker rm -f $image >/dev/null || :
+docker rm -f $image >/dev/null 2>&1 || :
 
 set -xe
 

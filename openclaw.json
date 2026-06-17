@@ -3,7 +3,7 @@
     "providers": {
       "ollama_mac": {
         "api": "ollama",
-        "apiKey": "ollama",
+        "apiKey": "__OPEN…ED__",
         "auth": "api-key",
         "baseUrl": "http://host.docker.internal:11434",
         "contextTokens": 246000,
@@ -22,7 +22,7 @@
       },
       "ollama_docker": {
         "api": "ollama",
-        "apiKey": "ollama",
+        "apiKey": "__OPEN…ED__",
         "auth": "api-key",
         "baseUrl": "http://ollama:11434",
         "contextTokens": 246000,
@@ -41,7 +41,7 @@
       },
       "ollama_gpu": {
         "api": "ollama",
-        "apiKey": "ollama",
+        "apiKey": "__OPEN…ED__",
         "auth": "api-key",
         "baseUrl": "http://100.116.243.98:11434",
         "contextTokens": 246000,
@@ -60,7 +60,7 @@
       },
       "ollama_gpu_local": {
         "api": "ollama",
-        "apiKey": "ollama",
+        "apiKey": "__OPEN…ED__",
         "auth": "api-key",
         "baseUrl": "http://192.168.111.175:11434",
         "contextTokens": 246000,
@@ -143,12 +143,15 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.6.8",
-    "lastTouchedAt": "2026-06-17T13:26:39.200Z"
+    "lastTouchedAt": "2026-06-17T22:43:02.035Z"
   },
   "browser": {
     "enabled": true
   },
   "cron": {
     "enabled": true
+  },
+  "memory": {
+    "backend": "builtin"
   }
 }

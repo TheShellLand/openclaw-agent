@@ -1,5 +1,5 @@
-#FROM node:latest
-FROM pi-agent:latest
+FROM node:latest
+# FROM pi-agent:latest
 
 RUN curl -fsSL https://openclaw.ai/install.sh | bash
 

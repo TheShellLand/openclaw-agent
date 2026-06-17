@@ -27,3 +27,13 @@ docker run -it -d \
   $image "$@"
 
 #  -v "$(pwd)/openclaw.json":/root/.openclaw/openclaw.json \
+
+set +x
+
+ifconfig | grep "inet " | grep -v 127
+echo
+
+echo "https://GET_YOUR_IP_ADDRESS:18789/"
+echo
+
+echo "password is 'hello'"

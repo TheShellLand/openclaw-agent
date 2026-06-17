@@ -11,5 +11,5 @@ set -x
 
 cat  ~/.openclaw/openclaw.json
 
-exec openclaw gateway --allow-unconfigured
+exec openclaw gateway run --allow-unconfigured
 

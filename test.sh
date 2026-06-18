@@ -16,6 +16,7 @@ docker run --rm -it \
   -p 0.0.0.0:3002:3001 \
   -p 0.0.0.0:18789:18789 \
   --memory-reservation=2g \
+  -v /var/run/docker.sock:/var/run/docker.sock \
   -v $image-agents:/root/.openclaw/agents \
   -v $image-gateway:/root/.openclaw/gateway \
   -v $image-workspace:/root/.openclaw/workspace \

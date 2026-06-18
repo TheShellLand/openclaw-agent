@@ -1,6 +1,10 @@
 FROM node:latest
 # FROM pi-agent:latest
 
+# docker-out-of-docker
+RUN apt update && apt install -y ca-certificates
+COPY --from:docker:latest /usr/local/bin/docker /uar/local/bin/docker
+
 RUN curl -fsSL https://openclaw.ai/install.sh | bash
 
 COPY openclaw.json /root/.openclaw/openclaw.json
